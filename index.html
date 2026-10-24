@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>24x7 Automation — Custom automation for UK businesses</title>
+<meta name="description" content="We take one repeated task, like retyping WhatsApp orders, chasing quotes or drafting supplier orders, and automate it end to end on the systems you already use. Fixed price, agreed before we start.">
+<meta name="theme-color" content="#F6F4EF">
+<meta property="og:title" content="24x7 Automation — The job you repeat every day, done for you.">
+<meta property="og:description" content="Custom automation for UK builders, wholesalers and shops. Fixed price, agreed before we start.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="24x7 automation home">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="#17150F" stroke-width="5" stroke-dasharray="89 18" transform="rotate(-50 24 24)" stroke-linecap="round"/><circle cx="35.2" cy="11.3" r="3.6" fill="#0B7282"/><path d="M24 24V14M24 24l6 4" stroke="#17150F" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+      <span><b>24x7</b><span> automation</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#solutions">Custom solutions</a>
+      <a href="#process">How we work</a>
+      <a href="#trades">By trade</a>
+      <a href="#products">Products</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#book" class="btn btn-dark btn-sm">Book a scoping call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill" data-reveal="0">Custom automation for UK businesses</span>
+      <h1 data-reveal="80">The job you repeat every day, done for you.</h1>
+      <p data-reveal="160">We take one repeated task, like retyping WhatsApp orders, chasing quotes or drafting supplier orders, and automate it end to end on the systems you already use. Fixed price, agreed before we start.</p>
+      <div class="hero-actions" data-reveal="240">
+        <a href="#book" class="btn btn-dark">Book a scoping call
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#solutions" class="btn btn-light">See what we build</a>
+      </div>
+    </div>
+
+    <div class="demo" data-reveal="200" id="demo" aria-live="polite">
+      <div class="demo-head">
+        <div>
+          <span class="k" id="demo-k">Wholesaler</span>
+          <span class="t" id="demo-t">WhatsApp order to invoice</span>
+        </div>
+        <span class="running" id="demo-running"><i></i>Running</span>
+      </div>
+      <div class="demo-steps" id="demo-steps"></div>
+      <div class="demo-tabs" id="demo-tabs" role="tablist" aria-label="Example automations"></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+
+<section class="photos">
+  <div class="wrap">
+    <figure data-reveal="0">
+      <div class="photo" data-parallax><img src="images/photo-builder.png" alt="Builder on site checking his phone" width="149" height="199" loading="lazy"></div>
+      <figcaption><b>On site.</b> Quotes chased and invoices out without the evening admin.</figcaption>
+    </figure>
+    <figure data-reveal="120">
+      <div class="photo" data-parallax><img src="images/photo-warehouse.png" alt="Wholesale warehouse worker picking an order" width="149" height="199" loading="lazy"></div>
+      <figcaption><b>In the warehouse.</b> WhatsApp orders entered without retyping.</figcaption>
+    </figure>
+    <figure data-reveal="240">
+      <div class="photo" data-parallax><img src="images/photo-shop.png" alt="Independent shop owner at the counter" width="149" height="199" loading="lazy"></div>
+      <figcaption><b>Behind the counter.</b> Stock checked and reorders drafted each morning.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="solutions" class="section solutions">
+  <div class="wrap">
+    <div class="split" data-reveal="0">
+      <div class="stack">
+        <span class="eyebrow">Custom solutions</span>
+        <h2 class="h2">Four builds we know inside out.</h2>
+      </div>
+      <p class="lead">Every project is scoped against one of these, then shaped to your business. That keeps the price fixed and the timeline honest.</p>
+    </div>
+    <div class="sol-grid" id="solutions-grid"></div>
+    <p class="note" data-reveal="0">Something different in mind? Tell us on the call. If it fits one of these four, we can price it. If it does not, we will say so.</p>
+  </div>
+</section>
+
+<section id="process" class="section process">
+  <div class="wrap">
+    <div class="stack" data-reveal="0">
+      <span class="eyebrow">How we work</span>
+      <h2 class="h2">From your words to a working build.</h2>
+    </div>
+    <div class="progress" data-reveal="0" aria-hidden="true"><i id="proc-bar"></i></div>
+    <div class="proc-grid" id="process-grid"></div>
+  </div>
+</section>
+
+<section id="trades" class="section trades">
+  <div class="wrap">
+    <div class="stack" data-reveal="0">
+      <span class="eyebrow">By trade</span>
+      <h2 class="h2">Where the work piles up, and what we take off you.</h2>
+    </div>
+    <div class="chips" id="trade-chips" data-reveal="80" role="tablist" aria-label="Trades"></div>
+    <div class="trade-panels" data-reveal="160">
+      <div class="panel panel-today">
+        <span class="eyebrow">Today</span>
+        <p class="pain" id="trade-pain"></p>
+        <span class="pill">Built from: <span id="trade-tpl"></span></span>
+      </div>
+      <div class="panel panel-after">
+        <span class="eyebrow">After the build</span>
+        <div class="after-steps" id="trade-steps"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section products">
+  <div class="wrap">
+    <div class="split" data-reveal="0">
+      <div class="stack">
+        <span class="eyebrow">Products</span>
+        <h2 class="h2">Ready-made tools from the same team.</h2>
+      </div>
+      <p class="lead">When enough businesses need the same build, we turn it into a product. Each has its own site with full details and pricing.</p>
+    </div>
+    <div class="prod-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<section id="control" class="section control">
+  <div class="wrap">
+    <div class="stack" data-reveal="0">
+      <span class="eyebrow">Built properly</span>
+      <h2 class="h2">Your systems, your approval, your data.</h2>
+    </div>
+    <div class="rules" id="rules-grid"></div>
+  </div>
+</section>
+
+<section id="pricing" class="section pricing">
+  <div class="wrap">
+    <div class="pricing-head" data-reveal="0">
+      <div class="stack">
+        <span class="eyebrow">Pricing</span>
+        <h2 class="h2">A fixed price, agreed before any work starts.</h2>
+      </div>
+      <span class="pill">Quoted on your scoping call</span>
+    </div>
+    <div class="bands" id="bands-grid">
+      <div class="band band-dark" data-reveal="0" data-last>
+        <span class="k">Monthly</span>
+        <h3>Care plan</h3>
+        <p>Comes with every project. Monitoring, fixes when something upstream changes, and small changes as you grow.</p>
+      </div>
+    </div>
+    <p class="note" data-reveal="0">Our ready-made products are priced on their own sites.</p>
+  </div>
+</section>
+
+<section id="faq" class="section faq">
+  <div class="wrap">
+    <h2 class="h2" data-reveal="0">Questions</h2>
+    <div class="faq-list" id="faq-list" data-reveal="80"></div>
+  </div>
+</section>
+
+<section id="book" class="section book">
+  <div class="wrap">
+    <div class="book-copy" data-reveal="0">
+      <h2>Tell us the job you are tired of doing.</h2>
+      <p>A 20 minute scoping call. You describe the task in your own words, we tell you which build it matches and what it would cost. No obligation.</p>
+      <div class="person">
+        <div class="avatar" aria-hidden="true">S</div>
+        <div><span class="name">Saquib</span><span class="role">Co-founder, 24x7 Automation</span></div>
+      </div>
+    </div>
+    <div class="card" data-reveal="120" id="book-card">
+      <form class="form" id="book-form" novalidate>
+        <div class="row">
+          <label class="field">Your name<input required name="name" autocomplete="name"></label>
+          <label class="field">Company name<input required name="business" autocomplete="organization"></label>
+        </div>
+        <label class="field">Closest match
+          <select name="build" id="build-select"></select>
+        </label>
+        <label class="field">The job, in a sentence or two<textarea name="job" rows="3" placeholder="We get 30 orders a day on WhatsApp and someone types each one into Sage."></textarea></label>
+        <div class="row">
+          <label class="field">Work email<input required name="email" type="email" autocomplete="email"></label>
+          <label class="field">Mobile number<input required name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <p class="form-error" id="form-error" role="alert">Please fill in your name, company, email and mobile number.</p>
+        <button type="submit" class="btn btn-dark" id="submit-btn">Book a scoping call</button>
+        <span class="fine">We use these details only to arrange your call. See our <a href="#privacy">privacy notice</a>.</span>
+      </form>
+      <div class="sent">
+        <span class="tick"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:#3B6E2A;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <h3>Thanks, request received.</h3>
+        <p>We will be in touch within one working day to find a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="privacy">
+  <div class="wrap">
+    <div class="stack" style="gap:14px">
+      <a href="#top" class="brand">
+        <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="#EEEAE2" stroke-width="5" stroke-dasharray="89 18" transform="rotate(-50 24 24)" stroke-linecap="round"/><circle cx="35.2" cy="11.3" r="3.6" fill="#62C6D3"/><path d="M24 24V14M24 24l6 4" stroke="#EEEAE2" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+        <span><b>24x7</b><span> automation</span></span>
+      </a>
+      <span class="tagline">Custom automation for UK businesses.</span>
+    </div>
+    <div class="footer-col" id="footer-products">
+      <span class="label">Products</span>
+    </div>
+    <div class="footer-col">
+      <span class="label">Company</span>
+      <a href="#solutions">Custom solutions</a>
+      <a href="#process">How we work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#book">Contact</a>
+    </div>
+    <div class="footer-col">
+      <span class="label">Legal</span>
+      <a href="#book">Privacy notice</a>
+      <a href="#book">Terms of business</a>
+    </div>
+    <span class="copy">© <span id="year"></span> 24x7 Automation. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
