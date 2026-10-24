@@ -6,6 +6,9 @@
   // Leave empty to show the confirmation only.
   var FORM_ENDPOINT = '';
 
+  // Calendly (or other scheduling) link for the "Book a demo" button. Leave empty to hide the button.
+  var CALENDLY_URL = '';
+
   var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (RM) document.documentElement.classList.add('reduced');
 
@@ -44,8 +47,25 @@
       ['Sent at 07:00', 'To your phone and inbox']] }
   ];
 
+  var CHANNELS = [
+    { k: 'WhatsApp', c: '#25D366', i: 'W' },
+    { k: 'Email', c: '#0B7282', i: 'E' },
+    { k: 'SMS', c: '#9A5B00', i: 'S' },
+    { k: 'Facebook', c: '#1877F2', i: 'f' },
+    { k: 'Instagram', c: '#D6336C', i: 'I' },
+    { k: 'LinkedIn', c: '#0A66C2', i: 'in' }
+  ];
+  var SAMPLE_MSGS = {
+    WhatsApp: ['Can you fit us in Thursday?', 'Same order as last week please', 'Is the 9am slot still free?'],
+    Email: ['Quote request for a kitchen refit', 'Invoice 1042 query', 'Can I change my booking?'],
+    SMS: ['Running 10 mins late', 'Do you do weekends?', 'Please call me back'],
+    Facebook: ['How much for a full service?', 'Are you open bank holiday?'],
+    Instagram: ['Love this, do you deliver?', 'Price for the grey one?'],
+    LinkedIn: ['Could we set up a call?', 'Interested in a partnership']
+  };
+
   var PROC = [
-    { t: 'Scope', d: 'A call where you describe the job in your own words. We match it to one of our four builds and give you a fixed price.' },
+    { t: 'Scope', d: 'A call where you describe the bottleneck in your own words, whatever your industry. We match it to a build and give you a fixed price.' },
     { t: 'Brief and demo', d: 'We turn it into a build brief and show you a working demo on your own data before anything goes live.' },
     { t: 'Go live', d: 'Switched on with you watching. We stay close for the first two weeks while it settles in.' },
     { t: 'Care plan', d: 'We monitor it, fix it when something upstream changes, and make small changes as you grow.' }
@@ -72,9 +92,9 @@
 
   var PRODUCTS = [
     { t: 'AI Receptionist', domain: 'receptionist.24x7automations.com', href: 'https://receptionist.24x7automations.com', src: 'images/frontdesk.svg', live: true,
-      d: 'Answers WhatsApp around the clock. Books, cancels and reschedules appointments, answers questions about your services, sends payment links and follows up.' },
+      d: 'Your AI front desk for WhatsApp, SMS, Facebook, Instagram and LinkedIn. Every message is sorted into its own place, replies are drafted in your voice, bookings and payment links are handled, and you step in only when a decision needs you.' },
     { t: 'AI Email Assistant', domain: 'email.24x7automations.com', href: 'https://email.24x7automations.com', src: 'images/email.svg', live: true,
-      d: 'Reads and answers email enquiries, drafts quotes and handles bookings, cancellations and changes by email. Anything important waits for staff approval.' },
+      d: 'Reads and sorts every email enquiry, drafts quotes and replies from your own business information, and handles bookings, cancellations and changes. Anything important waits for your approval.' },
     { t: 'AI CEO', domain: 'ceo.24x7automations.com', href: 'https://ceo.24x7automations.com', src: 'images/ceo.svg', live: false,
       d: 'One dashboard for the business. Income by service and by staff, salary costs, a weekly briefing on what went well and what needs attention, and suggestions.' },
     { t: 'Team Manager', domain: 'teams.24x7automations.com', href: 'https://teams.24x7automations.com', src: 'images/teams.svg', live: false,
@@ -87,7 +107,7 @@
     { t: 'Built on what you use', d: 'We connect to your existing systems. No new software for your team to learn.' },
     { t: 'You approve the important steps', d: 'Anything that spends money or speaks for you can wait for your OK.' },
     { t: 'Demo before go-live', d: 'You see it working on your own data before it is switched on.' },
-    { t: 'UK data', d: 'Your data is stored in the UK. We work from code and redacted logs, never your customers’ messages.' },
+    { t: 'Your data stays yours', d: 'Stored securely and never shared. We work from code and redacted logs, never your customers’ messages.' },
     { t: 'Fixed price', d: 'Agreed before work starts. No hourly billing, no surprises.' },
     { t: 'Looked after', d: 'The care plan covers monitoring and fixes, so it keeps working when things change.' }
   ];
@@ -99,13 +119,22 @@
   ];
 
   var FAQ = [
-    ['What kind of jobs can you automate?', 'Repeated jobs that follow the same steps each time: orders, quotes, invoices, reminders, stock and daily figures. If it is done by hand more than a few times a week, it is worth a call.'],
-    ['Do I need to change my software?', 'No. We build on the systems you already use, such as your accounts package, till or mailbox.'],
-    ['How long does a project take?', 'It depends on the band. You get a date along with the fixed price on your scoping call.'],
-    ['What if my job does not match the four builds?', 'We will tell you honestly. We only take on work we can price and deliver properly.'],
+    ['What kind of jobs can you automate?', 'Repeated jobs that follow the same steps each time: orders, quotes, invoices, reminders, stock, daily figures and customer conversations. If it is done by hand more than a few times a week, it is worth a call. We work with any industry: trades, wholesale, retail, clinics, studios, agencies and offices.'],
+    ['Which channels does the AI front desk cover?', 'WhatsApp, email, SMS, Facebook Messenger, Instagram and LinkedIn messages. Each channel is sorted into its own place on one dashboard, so WhatsApp conversations sit with WhatsApp, emails with email, and nothing is mixed into one cluttered inbox.'],
+    ['Will I still get a notification for every message?', 'No. Messages are collected quietly, a reply is drafted for each one, and the dashboard shows you what needs an answer now. You check your WhatsApp folder, your email folder or your social folder when you are ready, instead of your phone pinging all day.'],
+    ['Does the AI send replies without me?', 'Only where you allow it. You decide which replies can go out automatically, such as opening hours or booking confirmations, and which wait for your approval. Anything that spends money or commits you to something always waits for you.'],
+    ['Do I need to change my software?', 'No. We build on the systems you already use, such as your accounts package, till, calendar or mailbox. The AI front desk connects to your existing numbers and inboxes.'],
+    ['How is the AI front desk priced?', 'One tailored plan per business, based on your channels and volume, so you always know what the bill will be. You start with a two-week trial. If you are happy, the plan is paid annually. There are no monthly direct debits and no per-message surprises.'],
+    ['How quickly can I get set up?', 'The AI front desk connects to your channels in minutes and we help you add your business information the same day. Custom builds get a date along with the fixed price on your scoping call.'],
+    ['How long does a custom project take?', 'It depends on the band. Small builds are usually live within a couple of weeks, larger multi-system jobs take longer. You get a date along with the fixed price before any work starts.'],
+    ['What if my job does not match the four builds?', 'Tell us the bottleneck anyway. We look at the problem, propose a solution and price it. If it is not something we can deliver properly, we will say so.'],
     ['What does the care plan cover?', 'Monitoring, fixes when an outside system changes, and small changes as your business grows. It comes with every project.'],
-    ['How do the ready-made products fit in?', 'AI Receptionist, AI Email Assistant, AI CEO, Team Manager and AI Social Poster are separate products, each with its own site and pricing. They share the same customer and booking records, so they work together. Many customers start with one and add a custom build later.']
+    ['How do the ready-made products fit in?', 'AI Receptionist, AI Email Assistant, AI CEO, Team Manager and AI Social Poster are separate products, each with its own site. They share the same customer and booking records, so they work together. Many customers start with one and add a custom build later.']
   ];
+
+  var INDUSTRIES = ['Construction and trades', 'Home services', 'Wholesale and distribution', 'Retail and shops', 'Clinics and dental', 'Education and tutoring', 'Fitness and studios', 'Hospitality', 'Professional services', 'Manufacturing', 'Other'];
+  var TEAM_SIZES = ['Just me', '2 to 5', '6 to 10', '11 to 50', 'More than 50'];
+  var COUNTRIES = ['United Kingdom', 'Ireland', 'United States', 'Canada', 'Australia', 'New Zealand', 'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Pakistan', 'India', 'Germany', 'France', 'Netherlands', 'Spain', 'Italy', 'South Africa', 'Other'];
 
   var MARQUEE = ['Orders off WhatsApp', 'Quote to paid', 'Stock reorder drafts', 'Numbers at 07:00', 'Builders', 'Wholesalers', 'Shops', 'Kitchens', 'Electrical', 'Plumbing and heating', 'Roofing', 'Landscaping'];
 
@@ -170,6 +199,53 @@
     mq.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: 50000, iterations: Infinity });
   }
 
+  // ---------- Front desk routing animation ----------
+  var feed = $('router-feed'), out = $('router-out');
+  var counts = {}, outTiles = {};
+  CHANNELS.forEach(function (ch) {
+    counts[ch.k] = 0;
+    var tile = el('div', 'rtile');
+    tile.innerHTML =
+      '<span class="rtile-icon" style="background:' + ch.c + '">' + ch.i + '</span>' +
+      '<span class="rtile-body"><span class="rtile-k">' + ch.k + '</span><span class="rtile-s">0 waiting</span></span>' +
+      '<span class="rtile-n">0</span>';
+    out.appendChild(tile);
+    outTiles[ch.k] = tile;
+  });
+  function updateTile(k) {
+    var t = outTiles[k], n = counts[k];
+    t.querySelector('.rtile-n').textContent = n;
+    t.querySelector('.rtile-s').textContent = n === 0 ? '0 waiting' : (n + (n === 1 ? ' draft ready' : ' drafts ready'));
+    t.classList.remove('pulse'); void t.offsetWidth; t.classList.add('pulse');
+  }
+  function routeOne() {
+    var ch = CHANNELS[Math.floor(Math.random() * CHANNELS.length)];
+    var msgs = SAMPLE_MSGS[ch.k];
+    var chip = el('div', 'rmsg');
+    chip.innerHTML = '<span class="rtile-icon" style="background:' + ch.c + '">' + ch.i + '</span><span class="rmsg-t">' + esc(msgs[Math.floor(Math.random() * msgs.length)]) + '</span>';
+    feed.insertBefore(chip, feed.firstChild);
+    while (feed.children.length > 4) feed.removeChild(feed.lastChild);
+    requestAnimationFrame(function () { chip.classList.add('in'); });
+    setTimeout(function () {
+      chip.classList.add('routed');
+      counts[ch.k] = (counts[ch.k] + 1) % 10 || 1;
+      updateTile(ch.k);
+    }, 1400);
+  }
+  if (RM) {
+    // Static snapshot for reduced motion
+    [['WhatsApp', 3], ['Email', 5], ['SMS', 2], ['Facebook', 1], ['Instagram', 2], ['LinkedIn', 1]].forEach(function (p) { counts[p[0]] = p[1]; updateTile(p[0]); });
+    [['WhatsApp', 0], ['Email', 0], ['SMS', 0]].forEach(function (p) {
+      var ch = CHANNELS.filter(function (c) { return c.k === p[0]; })[0];
+      var chip = el('div', 'rmsg in');
+      chip.innerHTML = '<span class="rtile-icon" style="background:' + ch.c + '">' + ch.i + '</span><span class="rmsg-t">' + esc(SAMPLE_MSGS[ch.k][0]) + '</span>';
+      feed.appendChild(chip);
+    });
+  } else {
+    routeOne();
+    setInterval(routeOne, 1900);
+  }
+
   // ---------- Solutions ----------
   var sg = $('solutions-grid');
   SOL.forEach(function (c) {
@@ -205,13 +281,13 @@
   if (!RM) setInterval(function () { pk = (pk + 1) % 5; renderProc(); }, 1700);
 
   // ---------- Trades ----------
-  var tr = 0, step = 0;
+  var tr = 0, step = 0, tradeAuto = true;
   var chips = $('trade-chips'), tsteps = $('trade-steps');
   TRADES.forEach(function (t, i) {
     var b = el('button', '', esc(t.name));
     b.type = 'button';
     b.setAttribute('role', 'tab');
-    b.addEventListener('click', function () { tr = i; step = 0; renderTrade(); });
+    b.addEventListener('click', function () { tr = i; step = 0; tradeAuto = false; renderTrade(); });
     chips.appendChild(b);
   });
   function renderTrade() {
@@ -231,7 +307,14 @@
     });
   }
   renderTrade();
-  if (!RM) setInterval(function () { step++; renderTrade(); }, 1300);
+  if (!RM) {
+    setInterval(function () {
+      step++;
+      // Auto-rotate through trades so no single industry looks like the only one we serve.
+      if (tradeAuto && step > 0 && step % (TRADES[tr].steps.length + 2) === 0) { tr = (tr + 1) % TRADES.length; step = 0; }
+      renderTrade();
+    }, 1300);
+  }
 
   // ---------- Products ----------
   var prg = $('products-grid'), fp = $('footer-products');
@@ -291,10 +374,16 @@
   });
 
   // ---------- Form ----------
-  var sel = $('build-select');
-  SOL.map(function (x) { return x.k + ': ' + x.t; }).concat(['Not sure yet']).forEach(function (n) {
-    var o = document.createElement('option'); o.textContent = n; sel.appendChild(o);
-  });
+  function fillSelect(id, items) {
+    var s = $(id);
+    items.forEach(function (n) { var o = document.createElement('option'); o.textContent = n; s.appendChild(o); });
+  }
+  fillSelect('build-select', ['AI front desk: all channels, one dashboard'].concat(SOL.map(function (x) { return x.k + ': ' + x.t; })).concat(['Not sure yet']));
+  fillSelect('industry-select', INDUSTRIES);
+  fillSelect('team-select', TEAM_SIZES);
+  fillSelect('country-select', COUNTRIES);
+  var demoBtn = $('demo-btn');
+  if (CALENDLY_URL) { demoBtn.href = CALENDLY_URL; demoBtn.hidden = false; }
   var form = $('book-form'), card = $('book-card'), err = $('form-error'), btn = $('submit-btn');
   form.addEventListener('submit', function (e) {
     e.preventDefault();

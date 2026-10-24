@@ -23,6 +23,10 @@ All copy for the solutions, process steps, trades, products, rules, pricing band
 
 The form shows a confirmation on submit. To receive submissions, set `FORM_ENDPOINT` in `main.js` to a JSON webhook (Formspree, Make, n8n, Zapier and so on). The payload is a JSON object with `name`, `business`, `build`, `job`, `email`, `phone` and `page`.
 
+## Book a demo button
+
+Set `CALENDLY_URL` in `main.js` to your Calendly (or other scheduling) link. The "Book a demo" button under the form is hidden until it is set.
+
 ## Local preview
 
 ```sh
