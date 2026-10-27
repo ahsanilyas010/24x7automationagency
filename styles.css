@@ -414,7 +414,11 @@ h1, h2, h3, p { margin: 0; }
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   padding: 20px 24px; border-radius: var(--radius); background: var(--teal-soft); color: var(--teal); font-size: 16px; font-weight: 600;
 }
-.fd-cta .btn { color: var(--white); }
+.fd-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.fd-cta .btn-dark { color: var(--white); }
+.fd-cta .btn-light { color: var(--ink); }
+.router-brain .router-link { margin-top: 6px; font-size: 12px; font-weight: 600; color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+.router-brain .router-link:hover { color: var(--white); }
 
 /* Reveal + parallax */
 [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 650ms cubic-bezier(.2,.8,.2,1), transform 650ms cubic-bezier(.2,.8,.2,1); }

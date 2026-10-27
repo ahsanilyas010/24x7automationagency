@@ -91,7 +91,7 @@
   ];
 
   var PRODUCTS = [
-    { t: 'AI Receptionist', domain: 'receptionist.24x7automations.com', href: 'https://receptionist.24x7automations.com', src: 'images/prod-frontdesk.jpg', live: true,
+    { t: 'AI Receptionist', domain: 'frontdesk.24x7automations.com', href: 'https://frontdesk.24x7automations.com', src: 'images/prod-frontdesk.jpg', live: true,
       d: 'Your AI front desk for WhatsApp, SMS, Facebook, Instagram and LinkedIn. Every message is sorted into its own place, replies are drafted in your voice, bookings and payment links are handled, and you step in only when a decision needs you.' },
     { t: 'AI Email Assistant', domain: 'email.24x7automations.com', href: 'https://email.24x7automations.com', src: 'images/prod-email.jpg', live: true,
       d: 'Reads and sorts every email enquiry, drafts quotes and replies from your own business information, and handles bookings, cancellations and changes. Anything important waits for your approval.' },
