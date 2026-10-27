@@ -14,13 +14,13 @@
 
   // ---------- Content ----------
   var SOL = [
-    { k: 'Wholesaler', t: 'Orders off WhatsApp', r: 'retyping every order into your system', src: 'images/wholesale.svg',
+    { k: 'Wholesaler', t: 'Orders off WhatsApp', r: 'retyping every order into your system', src: 'images/sol-wholesale.jpg',
       steps: ['Order read from the message', 'Entered into your system', 'Confirmed back to the customer', 'Queries flagged to you'] },
-    { k: 'Builder', t: 'Quote to paid', r: 'chasing quotes and late payers by hand', src: 'images/builder.svg',
+    { k: 'Builder', t: 'Quote to paid', r: 'chasing quotes and late payers by hand', src: 'images/sol-builder.jpg',
       steps: ['Quote sent', 'Chased twice', 'Invoice out when the job is done', 'Late payers reminded'] },
-    { k: 'Shop', t: 'Stock reorder drafts', r: 'counting shelves and writing supplier orders', src: 'images/shop.svg',
+    { k: 'Shop', t: 'Stock reorder drafts', r: 'counting shelves and writing supplier orders', src: 'images/sol-shop.jpg',
       steps: ['Stock checked each morning', 'Supplier order drafted', 'Sent once you approve'] },
-    { k: 'Any business', t: 'Numbers at 07:00', r: 'pulling figures from three systems', src: 'images/morning.svg',
+    { k: 'Any business', t: 'Numbers at 07:00', r: 'pulling figures from three systems', src: 'images/sol-morning.jpg',
       steps: ['Sales, orders and cash', 'Pulled together overnight', 'Sent to you at 07:00'] }
   ];
 
@@ -72,34 +72,34 @@
   ];
 
   var TRADES = [
-    { name: 'Builders', tpl: 'Builder', pain: 'Quotes go out and nobody chases them. Invoices wait until the weekend.',
+    { name: 'Builders', tpl: 'Builder', img: 'images/trade-builders.jpg', alt: 'Construction crew on a building site', pain: 'Quotes go out and nobody chases them. Invoices wait until the weekend.',
       steps: ['Quote sent from your template', 'Chased on day 3 and day 7', 'Invoice raised when the job is marked done', 'Late payers reminded at 7 and 14 days'] },
-    { name: 'Kitchens', tpl: 'Builder', pain: 'Every enquiry needs a measure-up booked, a design sent and a deposit chased.',
+    { name: 'Kitchens', tpl: 'Builder', img: 'images/trade-kitchens.jpg', alt: 'Newly fitted kitchen with brass tap', pain: 'Every enquiry needs a measure-up booked, a design sent and a deposit chased.',
       steps: ['Measure-up request logged', 'Design and quote sent together', 'Deposit invoice raised on yes', 'Balance chased before fitting'] },
-    { name: 'Electrical', tpl: 'Builder', pain: 'Certificates and invoices are written up late at night after the job.',
+    { name: 'Electrical', tpl: 'Builder', img: 'images/trade-electrical.jpg', alt: 'Electrician wiring a socket', pain: 'Certificates and invoices are written up late at night after the job.',
       steps: ['Job marked done on the phone', 'Certificate and invoice drafted', 'Sent to the customer', 'Unpaid invoices reminded'] },
-    { name: 'Plumbing and heating', tpl: 'Builder', pain: 'Service reminders are kept in a notebook and often missed.',
+    { name: 'Plumbing and heating', tpl: 'Builder', img: 'images/trade-plumbing.jpg', alt: 'Chrome bath taps and shower fittings', pain: 'Service reminders are kept in a notebook and often missed.',
       steps: ['Service dates stored per customer', 'Reminder sent a month before', 'Booking request logged', 'Invoice out after the visit'] },
-    { name: 'Roofing', tpl: 'Builder', pain: 'Quotes after inspections take days because photos and notes are scattered.',
+    { name: 'Roofing', tpl: 'Builder', img: 'images/trade-roofing.jpg', alt: 'Roofer working on a pitched roof', pain: 'Quotes after inspections take days because photos and notes are scattered.',
       steps: ['Inspection photos and notes gathered', 'Quote drafted from your price list', 'Sent and chased twice', 'Invoice out on completion'] },
-    { name: 'Landscaping', tpl: 'Builder', pain: 'Seasonal work means a rush of quotes that never get followed up.',
+    { name: 'Landscaping', tpl: 'Builder', img: 'images/trade-landscaping.jpg', alt: 'Landscaper planting up a garden bed', pain: 'Seasonal work means a rush of quotes that never get followed up.',
       steps: ['Enquiries logged from WhatsApp and email', 'Quotes sent from templates', 'Chased before the season fills', 'Deposit invoices raised'] },
-    { name: 'Wholesale', tpl: 'Wholesaler', pain: 'Thirty WhatsApp orders a day, each one typed into the system by hand.',
+    { name: 'Wholesale', tpl: 'Wholesaler', img: 'images/trade-wholesale.jpg', alt: 'Parcel being handed over for delivery', pain: 'Thirty WhatsApp orders a day, each one typed into the system by hand.',
       steps: ['Order read from WhatsApp', 'Matched to customer and products', 'Entered into your system', 'Confirmation sent back'] },
-    { name: 'Independent shops', tpl: 'Shop', pain: 'Shelves are counted by eye and supplier orders written at closing time.',
+    { name: 'Independent shops', tpl: 'Shop', img: 'images/trade-shops.jpg', alt: 'Open sign in a shop window', pain: 'Shelves are counted by eye and supplier orders written at closing time.',
       steps: ['Stock read from the till each morning', 'Low lines listed', 'Supplier orders drafted', 'Sent once you approve'] }
   ];
 
   var PRODUCTS = [
-    { t: 'AI Receptionist', domain: 'receptionist.24x7automations.com', href: 'https://receptionist.24x7automations.com', src: 'images/frontdesk.svg', live: true,
+    { t: 'AI Receptionist', domain: 'receptionist.24x7automations.com', href: 'https://receptionist.24x7automations.com', src: 'images/prod-frontdesk.jpg', live: true,
       d: 'Your AI front desk for WhatsApp, SMS, Facebook, Instagram and LinkedIn. Every message is sorted into its own place, replies are drafted in your voice, bookings and payment links are handled, and you step in only when a decision needs you.' },
-    { t: 'AI Email Assistant', domain: 'email.24x7automations.com', href: 'https://email.24x7automations.com', src: 'images/email.svg', live: true,
+    { t: 'AI Email Assistant', domain: 'email.24x7automations.com', href: 'https://email.24x7automations.com', src: 'images/prod-email.jpg', live: true,
       d: 'Reads and sorts every email enquiry, drafts quotes and replies from your own business information, and handles bookings, cancellations and changes. Anything important waits for your approval.' },
-    { t: 'AI CEO', domain: 'ceo.24x7automations.com', href: 'https://ceo.24x7automations.com', src: 'images/ceo.svg', live: false,
+    { t: 'AI CEO', domain: 'ceo.24x7automations.com', href: 'https://ceo.24x7automations.com', src: 'images/prod-ceo.jpg', live: false,
       d: 'One dashboard for the business. Income by service and by staff, salary costs, a weekly briefing on what went well and what needs attention, and suggestions.' },
-    { t: 'Team Manager', domain: 'teams.24x7automations.com', href: 'https://teams.24x7automations.com', src: 'images/teams.svg', live: false,
+    { t: 'Team Manager', domain: 'teams.24x7automations.com', href: 'https://teams.24x7automations.com', src: 'images/prod-teams.jpg', live: false,
       d: 'Staff profiles, hours, holidays and skills. Bookings go to whoever is free and qualified, tasks are delegated, and performance is tracked per person.' },
-    { t: 'AI Social Poster', domain: 'social.24x7automations.com', href: 'https://social.24x7automations.com', src: 'images/social.svg', live: false,
+    { t: 'AI Social Poster', domain: 'social.24x7automations.com', href: 'https://social.24x7automations.com', src: 'images/prod-social.jpg', live: false,
       d: 'Creates posts from your bookings, reviews and business activity, suggests campaigns, and publishes to Instagram, Facebook and Google Business Profile after you approve.' }
   ];
 
@@ -295,6 +295,11 @@
     var tk = RM ? t.steps.length : step % (t.steps.length + 2);
     $('trade-pain').textContent = t.pain;
     $('trade-tpl').textContent = t.tpl;
+    var img = $('trade-img');
+    if (img.getAttribute('src') !== t.img) {
+      img.classList.add('swap');
+      setTimeout(function () { img.src = t.img; img.alt = t.alt; img.classList.remove('swap'); }, RM ? 0 : 220);
+    }
     Array.prototype.forEach.call(chips.children, function (b, i) {
       b.classList.toggle('on', i === tr);
       b.setAttribute('aria-selected', i === tr ? 'true' : 'false');

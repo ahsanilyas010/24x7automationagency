@@ -11,7 +11,7 @@ No build step. Plain HTML, CSS and JavaScript, deployed on Vercel.
 | `index.html` | Page markup |
 | `styles.css` | All styles (design tokens are CSS variables at the top) |
 | `main.js` | Content data plus the animated hero demo, process bar, trade switcher, FAQ and booking form |
-| `images/` | Photos and card illustrations |
+| `images/` | Photos for the photo strip, solution cards, product cards and the by-trade panel |
 | `fonts/` | Instrument Sans (self-hosted) |
 | `vercel.json` | Clean URLs, caching and security headers |
 
@@ -26,6 +26,10 @@ The form shows a confirmation on submit. To receive submissions, set `FORM_ENDPO
 ## Book a demo button
 
 Set `CALENDLY_URL` in `main.js` to your Calendly (or other scheduling) link. The "Book a demo" button under the form is hidden until it is set.
+
+## Photo credits
+
+All photos are from [Unsplash](https://unsplash.com) and used under the Unsplash License (free for commercial use, no permission needed). Where the file carried the photographer's name: Clay Banks (shop counter), Kylie DeDeo (roofing), LUXXCREATIVE (plumbing). Replace any image by dropping a new file over the same filename in `images/`.
 
 ## Local preview
 
